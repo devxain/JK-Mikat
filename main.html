@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Namaz Timings</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header Section -->
+      <div class="header">
+        <div class="date">
+          <p class="hijri">10 - 2 جمادی 1446</p>
+          <p class="gregorian">Thu 12-12-24</p>
+        </div>
+        <select class="district-select">
+          <option value="Srinagar">Srinagar</option>
+          <option value="Anantnag">Anantnag</option>
+          <option value="Baramulla">Baramulla</option>
+          <option value="Kupwara">Kupwara</option>
+          <option value="Pulwama">Pulwama</option>
+          <option value="Shopian">Shopian</option>
+          <option value="Budgam">Budgam</option>
+          <option value="Bandipora">Bandipora</option>
+          <option value="Kulgam">Kulgam</option>
+          <option value="Poonch">Poonch</option>
+        </select>
+      </div>
+
+      <!-- Countdown Timer Section -->
+      <div class="timer-section">
+        <div class="circle">
+          <p class="next-prayer">ASR</p>
+          <p class="countdown">03:00:59</p>
+        </div>
+      </div>
+
+      <!-- Namaz Timings Table -->
+      <div class="timings">
+        <table>
+          <thead>
+            <tr>
+              <th>Prayer</th>
+              <th>Date</th>
+              <th>Start Time</th>
+            </tr>
+          </thead>
+          <tbody id="timings-table">
+            <!-- Rows will be inserted dynamically -->
+          </tbody>
+        </table>
+      </div>
+      <!-- Campus Tool Section -->
+      <div class="qibla-tool">
+        <h2>Campus Tool - Qibla Direction</h2>
+        <div class="qibla-direction">
+          <div class="qibla-arrow" id="qibla-arrow"></div>
+          <p id="qibla-degree"></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
