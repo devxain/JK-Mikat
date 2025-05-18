@@ -1,4 +1,4 @@
-/* Global Styles */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,258 +6,121 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(to right, #56ccf2, #2f80ed);
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  overflow-y: auto; /* Allow scrolling */
-  padding: 10px; /* Add some padding to prevent content from sticking to the edges */
-}
-
-/* Container Styling */
-.container {
-  width: 100%;
-  max-width: 1000px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #F4F6F8;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  overflow-y: auto; /* Allow scrolling within the container */
-  max-height: 90vh; /* Ensure content doesn't overflow beyond the screen */
+  color: #1C1C1E;
 }
 
-/* Header Section */
+
+#clock {
+  font-family: 'Digital-7', 'Courier New', Courier, monospace;
+  font-size: 4rem;
+  text-align: center;
+  color: #007BFF;
+  margin-bottom: 20px;
+  letter-spacing: 0.15em;
+  background: #e0f0ff;
+  padding: 15px 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+  user-select: none;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
   flex-wrap: wrap;
-  position: sticky; /* Keep the header at the top when scrolling */
-  top: 0;
-  background-color: rgba(255, 255, 255, 0.3); /* Add subtle background to header */
-  padding: 20px 30px; /* Increased padding to add space between content and border */
-  z-index: 10; /* Make sure header stays on top */
-  border-bottom: 2px solid #2f80ed; /* Slight border to separate header */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-  border-radius: 5px;
-  width: 100%; /* Make sure header spans the full width */
-  max-width: 1000px; /* Optional: limit the width of the header */
-  margin: 0 auto; /* Center the header content horizontally */
-  text-align: center; /* Ensure text inside the header is centered */
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-.date {
-  font-size: 18px;
-  text-align: center;
+.header .date p {
+  margin: 4px 0;
+  font-weight: 500;
 }
 
-.hijri,
-.gregorian {
-  font-size: 16px;
-}
-
-.hijri {
-  font-weight: bold;
-  margin-bottom: 4px;
-}
-
-.gregorian {
-  font-weight: normal;
-  color: #ddd;
-}
-
-.city {
-  padding: 10px 20px;
-  background: #fff;
-  color: #2f80ed;
-  border: none;
-  border-radius: 25px;
-  font-size: 16px;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+select {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  background-color: #fff;
   transition: all 0.3s ease;
-  margin-top: 10px; /* Ensure it has some spacing */
 }
-
-.city:hover {
-  background-color: #2f80ed;
-  color: #fff;
-}
-
-
-/* Timer Section */
-.timer-section {
-  text-align: center;
-  margin-top: 30px;
-}
-
-.circle {
-  width: 250px;
-  height: 250px;
-  background: #fff;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden; /* Prevent timer overflow */
+select:hover {
+  border-color: #007BFF;
 }
 
 .next-prayer {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #333;
+  font-size: 1.3rem;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 600;
+  color: #007BFF;
 }
-
 .countdown {
-  font-size: 32px;
+  text-align: center;
+  font-size: 2.2rem;
   font-weight: bold;
-  color: #333;
+  margin: 10px 0 20px;
+  color: #2ECC71;
 }
 
-.circle::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80%;
-  height: 80%;
-  border: 5px solid #2f80ed;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  animation: countdownAnimation 3600s linear infinite;
-}
-
-@keyframes countdownAnimation {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-
-/* Timings Table Section */
-.timings table {
+table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 30px;
-  table-layout: fixed;
-}
-
-.timings th,
-.timings td {
-  padding: 12px;
-  text-align: left;
-  word-wrap: break-word;
-}
-
-.timings th {
-  background-color: #2f80ed;
-  color: #fff;
-  font-size: 18px;
-}
-
-.timings td {
-  background-color: #fff;
-  color: #333;
-  font-size: 16px;
-  border-bottom: 2px solid #ddd;
-}
-
-.timings td:first-child {
-  font-weight: bold;
-  color: #2f80ed;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .container {
-    padding: 15px;
-    margin: 0 10px;
-  }
-
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .date {
-    margin-bottom: 10px;
-  }
-
-  .city {
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .circle {
-    width: 200px;
-    height: 200px;
-  }
-
-  .next-prayer {
-    font-size: 22px;
-  }
-
-  .countdown {
-    font-size: 28px;
-  }
-}
-
-/* For small mobile screens */
-@media (max-width: 480px) {
-  .circle {
-    width: 180px;
-    height: 180px;
-  }
-
-  .next-prayer {
-    font-size: 18px;
-  }
-
-  .countdown {
-    font-size: 24px;
-  }
-
-  .timings th,
-  .timings td {
-    font-size: 14px;
-  }
-}
-/* Qibla tool */
-.qibla-tool {
-  margin-top: 30px;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
+  margin-top: 20px;
+  background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+th, td {
+  padding: 14px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+}
+th {
+  background-color: #007BFF;
+  color: #fff;
+  font-weight: 600;
+}
+tr:last-child td {
+  border-bottom: none;
+}
+
+#qibla-btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#qibla-btn:hover {
+  background-color: #0056b3;
+}
+
+#qibla-container {
+  margin-top: 20px;
   text-align: center;
 }
-
-.qibla-direction {
-  position: relative;
+#compass {
+  width: 100px;
+  transition: transform 2s ease;
 }
-
-.qibla-arrow {
-  width: 50px;
-  height: 50px;
-  background: url('qibla-arrow.png') no-repeat center center;
-  background-size: contain;
-  margin: 20px auto;
-  transform-origin: center center;
-  transition: transform 1s ease-in-out;
-}
-
-.qibla-degree {
-  font-size: 16px;
+#qibla-direction {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: 500;
   color: #333;
 }
